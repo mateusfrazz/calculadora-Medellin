@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/js/inicio.js"></script>
+    <title>Tabela Medellin</title>
+</head>
+<body>
+    <div class="main-content">
+        <div>
+            <img src="/images/medellin_1-removebg-preview.png" alt="">
+        </div>
+        <div id="calculadora">
+            <div id="principal">
+                <div class="formulario">
+                    <div>
+                        <img src="/images/medellin_1-removebg-preview.png" alt="" class="img-content">   
+                    </div>
+                    <form>
+                        <h1>ARMAS</h1>
+                        <div class="item-group">
+                            <label>
+                                <span>GLOCK</span>
+                                <input type="number" name="GLOCK" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoGlock" onchange="calcular()">
+                                    <option value="1500">Normal: 1500 </option>
+                                    <option value="750">Mínimo: 750</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>FIVE</span>
+                                <input type="number" name="FIVE" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoFive" onchange="calcular()">
+                                    <option value="1500">Normal: 1500 </option>
+                                    <option value="1000">Mínimo: 1000</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>TEC</span>
+                                <input type="number" name="TEC" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoTec" onchange="calcular()">
+                                    <option value="2500">Normal: 2500 </option>
+                                    <option value="1500">Mínimo: 1500</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>NAVY</span>
+                                <input type="number" name="NAVY" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoNavy" onchange="calcular()">
+                                    <option value="4500">Normal: 4500 </option>
+                                    <option value="2750">Mínimo: 2750</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>MTAR</span>
+                                <input type="number" name="MTAR" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoMtar" onchange="calcular()">
+                                    <option value="5000">Normal: 5000 </option>
+                                    <option value="3200">Mínimo: 3200</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>AK-47</span>
+                                <input type="number" name="AK-47" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoAK-47" onchange="calcular()">
+                                    <option value="5500">Normal: 5500 </option>
+                                    <option value="3300">Mínimo: 3300</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>M4A1</span>
+                                <input type="number" name="M4A1" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoM4A1" onchange="calcular()">
+                                    <option value="7000">Normal: 7000 </option>
+                                    <option value="3750">Mínimo: 3750</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>HK416</span>
+                                <input type="number" name="HK416" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoHK416" onchange="calcular()">
+                                    <option value="8000">Normal: 8000 </option>
+                                    <option value="4000">Mínimo: 4000</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>G36</span>
+                                <input type="number" name="G36" value="0" min="0" step="1" onchange="calcular()">
+                                <select name="precoG36" onchange="calcular()">
+                                    <option value="10000">Normal: 10000 </option>
+                                    <option value="4500">Mínimo: 4500</option>
+                                </select>
+                            </label>
+                        </div>
+                        <!-- Continue o mesmo padrão para os demais itens -->
+                    </form>
+
+                    <!-- Adicionar campos para informações do comprador e vendedor -->
+                    <form>
+                        <h1>Informações</h1>
+                        <div class="item-group">
+                            <label>
+                                <span>FAC Comprador:</span>
+                                <input type="text" id="facComprador" required>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>Compradores:</span>
+                                <input type="text" id="compradores" required>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>Vendedor:</span>
+                                <input type="text" id="vendedor" required>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>ID do Vendedor no Discord:</span>
+                                <input type="text" id="discordIdVendedor" required>
+                            </label>
+                        </div>
+                        <div class="item-group">
+                            <label>
+                                <span>Tipo de Transação:</span>
+                                <select id="tipoTransacao" onchange="toggleTroca()" required>
+                                    <option value="Venda">Venda</option>
+                                    <option value="Troca">Troca</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="item-group" id="trocaDetalhes" style="display: none;">
+                            <label>
+                                <span>Detalhes da Troca:</span>
+                                <textarea id="detalhesTroca"></textarea>
+                            </label>
+                        </div>
+                    </form>
+
+                    <div class="resultado">
+                        <h2>Total: <span id="total">0</span></h2>
+                        <h2>Valor a Retirar: <span id="valorFuncionario">0</span></h2>
+                    </div>
+
+                    <div class="botao-zerar">
+                        <button type="button" onclick="zerarValores()">Zerar Valores</button>
+                    </div>
+
+                    <div class="botao-salvar">
+                        <button type="button" onclick="salvarCompra()">Salvar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Adicione mais divs para outras seções do dashboard -->
+    </div>
+    
+    <script>
+        function calcular() {
+            const forms = document.querySelectorAll('form');
+            let total = 0;
+
+            forms.forEach(form => {
+                const inputs = form.querySelectorAll('input[type="number"]');
+                const selects = form.querySelectorAll('select');
+
+                inputs.forEach((input, index) => {
+                    const quantidade = parseFloat(input.value);
+                    const preco = parseFloat(selects[index].value);
+                    total += quantidade * preco;
+                });
+            });
+
+            document.getElementById('total').innerText = total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+            // Calcular valor a ser retirado para o funcionário (20%)
+            const valorFuncionario = total * 0.2;
+            document.getElementById('valorFuncionario').innerText = valorFuncionario.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function zerarValores() {
+            const inputs = document.querySelectorAll('input[type="number"]');
+            inputs.forEach(input => input.value = 0);
+            calcular();
+        }
+
+        function salvarCompra() {
+            const facComprador = document.getElementById('facComprador').value;
+            const compradores = document.getElementById('compradores').value;
+            const vendedor = document.getElementById('vendedor').value;
+            const discordIdVendedor = document.getElementById('discordIdVendedor').value;
+            const tipoTransacao = document.getElementById('tipoTransacao').value;
+            const detalhesTroca = document.getElementById('detalhesTroca').value;
+            const total = document.getElementById('total').innerText;
+            const valorFuncionario = document.getElementById('valorFuncionario').innerText;
+
+            const forms = document.querySelectorAll('form');
+            let itensComprados = '';
+
+            forms.forEach(form => {
+                const inputs = form.querySelectorAll('input[type="number"]');
+                const selects = form.querySelectorAll('select');
+
+                inputs.forEach((input, index) => {
+                    const quantidade = parseFloat(input.value);
+                    if (quantidade > 0) {
+                        const item = input.name;
+                        const preco = parseFloat(selects[index].value).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                        itensComprados += `𝙸𝚃𝙴𝙼: ${item}\n𝚀𝚄𝙰𝙽𝚃𝙸𝙳𝙰𝙳𝙴: ${quantidade}\n𝚅𝙰𝙻𝙾𝚁: R$ ${preco}\n`;
+                    }
+                });
+            });
+
+            const dataAtual = new Date().toLocaleDateString('pt-BR');
+            const mensagem = `𝙵𝙰𝙲 𝙲𝙾𝙼𝙿𝚁𝙰𝙳𝙾𝚁: ${facComprador}\n𝙲𝙾𝙼𝙿𝚁𝙰𝙳𝙾𝚁𝙴𝚂: ${compradores}\n𝚅𝙴𝙽𝙳𝙴𝙳𝙾𝚁: <@${discordIdVendedor}>\n${itensComprados}𝚅𝙰𝙻𝙾𝚁 𝙱𝚁𝚄𝚃𝙾: R$ ${total}\n𝚅𝙰𝙻𝙾𝚁 𝙰 𝚁𝙴𝚃𝙸𝚁𝙰𝚁: R$ ${valorFuncionario}\n${tipoTransacao === 'Troca' ? `DETALHES DA TROCA: ${detalhesTroca}\n` : ''}\n𝙳𝙰𝚃𝙰: ${dataAtual}`;
+
+            enviarParaDiscord(mensagem);
+        }
+
+        function enviarParaDiscord(mensagem) {
+            const webhookURL = 'https://discord.com/api/webhooks/1259146696190070804/NuftC8zqwgezKNi8-R3PJHmn_XZBchMBOHS1SBeh7HJ9I6ktDIv7pcrLU4woGQlyXjve';
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: mensagem })
+            }).then(response => {
+                if (response.ok) {
+                    alert('Compra salva e enviada para o Discord com sucesso!');
+                } else {
+                    alert('Erro ao enviar para o Discord.');
+                }
+            }).catch(error => {
+                alert('Erro ao enviar para o Discord.');
+                console.error('Erro:', error);
+            });
+        }
+
+        function toggleTroca() {
+            const tipoTransacao = document.getElementById('tipoTransacao').value;
+            const trocaDetalhes = document.getElementById('trocaDetalhes');
+            if (tipoTransacao === 'Troca') {
+                trocaDetalhes.style.display = 'block';
+            } else {
+                trocaDetalhes.style.display = 'none';
+            }
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.main-content > div');
+            sections.forEach(section => {
+                section.style.display = section.id === sectionId ? 'block' : 'none';
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('calculadora');
+        });
+    </script>
+</body>
+</html>

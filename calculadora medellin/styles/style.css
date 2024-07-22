@@ -1,0 +1,94 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    overflow-y: auto;
+}
+#principal {
+    max-width: 1200px;
+    width: 80%;
+    padding: 20px;
+    background-color: #071952;
+    box-shadow: 0 0 10px rgba(150, 45, 45, 0.1);
+    border-radius: 10px;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+form {
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+.item-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 325px;
+   
+    
+}
+.item-group label {
+    
+    
+    
+    width:100%; 
+}
+.item-group span {
+    flex: 1;
+    color: aliceblue;
+    padding: 20px;
+    margin: 20px;
+    
+   
+}
+.item-group input[type="number"] {
+    width: 90px;
+    height: 50px;
+    margin-right: 100px;
+    border: none;
+    border-radius: 7px;
+    
+}
+.resultado {
+    text-align: center;
+    margin-top: 20px;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+.botao-zerar, .botao-salvar {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+.img-content{
+    width: 300px;
+}
